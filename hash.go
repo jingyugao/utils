@@ -16,7 +16,7 @@ const (
 )
 
 // 32-bit mixing function.
-func mmix(h uint32, k uint32) (uint32, uint32) {
+func mix2(h uint32, k uint32) (uint32, uint32) {
 	k *= M
 	k ^= k >> R
 	k *= M
@@ -24,8 +24,6 @@ func mmix(h uint32, k uint32) (uint32, uint32) {
 	h ^= k
 	return h, k
 }
-
-// -----------------------------------------------------------------------------
 
 // The original MurmurHash2 32-bit algorithm by Austin Appleby.
 func MurmurHash2(data []byte, seed uint32) (h uint32) {
@@ -37,7 +35,7 @@ func MurmurHash2(data []byte, seed uint32) (h uint32) {
 	// Mix 4 bytes at a time into the hash
 	for l := len(data); l >= 4; l -= 4 {
 		k = uint32(data[0]) | uint32(data[1])<<8 | uint32(data[2])<<16 | uint32(data[3])<<24
-		h, k = mmix(h, k)
+		h, k = mix2(h, k)
 		data = data[4:]
 	}
 
@@ -126,7 +124,7 @@ func MurmurHash2A(data []byte, seed uint32) (h uint32) {
 
 	for l := len(data); l >= 4; l -= 4 {
 		k = uint32(data[0]) | uint32(data[1])<<8 | uint32(data[2])<<16 | uint32(data[3])<<24
-		h, k = mmix(h, k)
+		h, k = mix2(h, k)
 		data = data[4:]
 	}
 
@@ -141,8 +139,8 @@ func MurmurHash2A(data []byte, seed uint32) (h uint32) {
 		t ^= uint32(data[0])
 	}
 
-	h, _ = mmix(h, t)
-	h, _ = mmix(h, ln)
+	h, _ = mix2(h, t)
+	h, _ = mix2(h, ln)
 
 	h ^= h >> 13
 	h *= M
@@ -177,7 +175,7 @@ func (m *murmur32) mixTail(data []byte) []byte {
 		m.tail |= uint32(data[0]) << (m.count * 8)
 		m.count++
 		if m.count == 4 {
-			m.hash, _ = mmix(m.hash, m.tail)
+			m.hash, _ = mix2(m.hash, m.tail)
 			m.tail = 0
 			m.count = 0
 		}
@@ -203,7 +201,7 @@ func (m *murmur32) Write(data []byte) (n int, err error) {
 
 	for l := len(data); l >= 4; l -= 4 {
 		k := uint32(data[0]) | uint32(data[1])<<8 | uint32(data[2])<<16 | uint32(data[3])<<24
-		m.hash, k = mmix(m.hash, k)
+		m.hash, k = mix2(m.hash, k)
 		data = data[4:]
 	}
 
@@ -213,8 +211,8 @@ func (m *murmur32) Write(data []byte) (n int, err error) {
 
 // Get the hash result.
 func (m *murmur32) Sum32() (hash uint32) {
-	hash, _ = mmix(m.hash, m.tail)
-	hash, _ = mmix(hash, m.size)
+	hash, _ = mix2(m.hash, m.tail)
+	hash, _ = mix2(hash, m.size)
 
 	hash ^= hash >> 13
 	hash *= M

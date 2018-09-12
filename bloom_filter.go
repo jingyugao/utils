@@ -4,22 +4,20 @@ import (
 	"math"
 )
 
-type HashFunc func(interface{}) uint32
-
-var hashFuncs []HashFunc = []HashFunc{
-	func(x interface{}) uint32 {
+// type HashFunc func([]byte) uint32
+var hashFuncs = []func([]byte) uint32{
+	func(x []byte) uint32 {
+		return 1
+	},
+	func(x []byte) uint32 {
 
 		return 1
 	},
-	func(x interface{}) uint32 {
+	func(x []byte) uint32 {
 
 		return 1
 	},
-	func(x interface{}) uint32 {
-
-		return 1
-	},
-	func(x interface{}) uint32 {
+	func(x []byte) uint32 {
 
 		return 1
 	},
@@ -31,23 +29,24 @@ type BloomFilter struct {
 	k     int
 	array []byte
 	cnt   int
+	seed  uint64
 }
 
-func NewBloomFilter(size int, elemCnt int) *BloomFilter {
+func NewBloomFilter(memSize int, total_elems int, seed uint64) *BloomFilter {
 
 	// var k int = int(float64(size/uint64(elemCnt)) * math.Log(2))
 
 	k := len(hashFuncs)
 	// size = int(math.Max(float64(size), float64(1024 * 1024)))
 	return &BloomFilter{
-		m:     size,
+		m:     memSize,
 		k:     k,
-		array: make([]byte, size),
+		array: make([]byte, memSize),
 	}
 
 }
 
-func (bf *BloomFilter) Set(data interface{}) {
+func (bf *BloomFilter) Set(data []byte) {
 
 	for _, hf := range hashFuncs {
 		i := hf(data)
@@ -59,7 +58,7 @@ func (bf *BloomFilter) Set(data interface{}) {
 	return
 }
 
-func (bf *BloomFilter) Test(data interface{}) bool {
+func (bf *BloomFilter) Test(data []byte) bool {
 
 	for _, hf := range hashFuncs {
 		i := hf(data)
@@ -85,4 +84,8 @@ func (bf *BloomFilter) ErrRate() float64 {
 func errRate(m, n, k float64) float64 {
 
 	return 1 - math.Pow(1-1/m, k*n)
+}
+
+func init() {
+
 }
