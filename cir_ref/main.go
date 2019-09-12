@@ -1,22 +1,15 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"go/ast"
 	"go/parser"
 	"go/token"
-	"io/ioutil"
 	"strings"
 )
 
-func printV(v interface{}) {
-	r, e := json.Marshal(v)
-	fmt.Println(string(r), e)
-}
-
 type V struct {
-	pkgName       string
+	pkgName       string // current walk pkg name
 	allStructInfo map[string][]string
 }
 
@@ -88,7 +81,7 @@ var (
 
 func main() {
 	struct2FieldKinds = map[string][]string{}
-	doInDir(".", parseFile)
+	ParseDir(".")
 
 	for k := range struct2FieldKinds {
 		s := []string{}
@@ -137,28 +130,16 @@ func hasChild(target string, cur string) bool {
 	return false
 }
 
-func parseFile(fileName string) {
-	f, _ := parser.ParseFile(token.NewFileSet(), fileName, nil, parser.ParseComments)
+func ParseDir(dir string) {
+	pkgMap, _ := parser.ParseDir(token.NewFileSet(), dir, nil, parser.ParseComments)
+
 	v := V{}
-	v.pkgName = f.Name.String()
-	ast.Walk(&v, f)
+	for pkgName, pkg := range pkgMap {
+		v.pkgName = pkgName
+		ast.Walk(&v, pkg)
+	}
+
 	for k, v := range v.allStructInfo {
 		struct2FieldKinds[k] = v
-	}
-}
-
-func doInDir(dir string, fn func(string)) {
-	flist, err := ioutil.ReadDir(dir)
-	if err != nil {
-		panic(err)
-	}
-	for _, f := range flist {
-		if f.IsDir() {
-			doInDir(dir+"/"+f.Name(), fn)
-		} else {
-			if f.Name()[len(f.Name())-2:] == "go" {
-				fn(dir + "/" + f.Name())
-			}
-		}
 	}
 }
