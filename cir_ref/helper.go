@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"reflect"
 	"sort"
 )
@@ -11,8 +10,9 @@ func CheckCircle(m map[string][]string) (allPath [][]string) {
 		deepSearch(k, m, nil, &allPath)
 	}
 
-	for _, path := range allPath {
+	for i, path := range allPath {
 		sort.Strings(path)
+		allPath[i] = append(path, path[0])
 	}
 	Unique(&allPath)
 	return
@@ -20,11 +20,7 @@ func CheckCircle(m map[string][]string) (allPath [][]string) {
 }
 
 func Unique(slc interface{}) {
-	if reflect.TypeOf(slc).Kind() != reflect.Ptr {
-	}
-
 	rval := reflect.ValueOf(slc)
-
 	if rval.Kind() != reflect.Ptr {
 		panic("param not ptr")
 	}
@@ -46,8 +42,6 @@ func Unique(slc interface{}) {
 			result = reflect.Append(result, rval.Index(i))
 		}
 	}
-	v, _ := json.Marshal(result.Interface())
-	println(string(v))
 	rval.Set(result)
 	return
 }

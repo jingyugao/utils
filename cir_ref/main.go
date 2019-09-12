@@ -82,52 +82,11 @@ var (
 func main() {
 	struct2FieldKinds = map[string][]string{}
 	ParseDir(".")
-
-	for k := range struct2FieldKinds {
-		s := []string{}
-		if check(k, s) {
-			println(k, strings.Join(s, ","))
-		}
-	}
-}
-
-func check(name string, stack []string) bool {
-	return checkAux(name, stack)
-}
-
-func checkAux(cur string, stack []string) bool {
-	for _, s := range stack {
-		if s == cur {
-			return true
-		}
-	}
-	stack = append(stack, cur)
-
-	vs, ok := struct2FieldKinds[cur]
-	if !ok {
-		return false
-	}
-	for _, v := range vs {
-		if checkAux(v, stack) {
-			return true
-		}
+	allPath := CheckCircle(struct2FieldKinds)
+	for _, path := range allPath {
+		fmt.Printf("[%s] circle reference found\n", strings.Join(path, " -> "))
 	}
 
-	return false
-}
-
-func hasChild(target string, cur string) bool {
-	if vs, ok := struct2FieldKinds[cur]; ok {
-		for _, v := range vs {
-			if v == target {
-				return true
-			}
-			if hasChild(target, v) {
-				return true
-			}
-		}
-	}
-	return false
 }
 
 func ParseDir(dir string) {
