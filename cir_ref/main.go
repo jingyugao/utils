@@ -9,15 +9,27 @@ import (
 )
 
 func main() {
+	fset := token.NewFileSet()
+	si := &sqlInject{fset: fset}
 
-	pkgMap, _ := parser.ParseDir(token.NewFileSet(), "./testdata", nil, parser.ParseComments)
+	file, err := parser.ParseFile(fset, "./testdata/const.go", nil, 0)
+	// ast.Walk(si, file)
 
-	si := &sqlInject{}
-	for k, v := range pkgMap {
-		println(k)
-		ast.Walk(si, v)
+	ast.Print(fset, file)
+	return
+
+	pkgMap, err := parser.ParseDir(fset, "./testdata", nil, 0)
+	// pkgMap, err := parser.ParseDir(fset, "/Users/gao/Code/stat/model", nil, 0)
+	if err != nil {
+		panic(err)
+	}
+	for _, v := range pkgMap {
+		f := "/Users/gao/Code/stat/model/mstdealercount.go"
+		ast.Walk(si, v.Files[f])
+		// ast.Walk(si, v)
 	}
 
+	_ = si
 	return
 	allPath := CheckCircleRef(pkgMap)
 	for _, path := range allPath {

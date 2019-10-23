@@ -1,0 +1,1823 @@
+     0  *ast.Ident {
+     1  .  NamePos: 1316465
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1316297
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1316305
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1316309
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1316316
+    27  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1316317
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tselect count(CH_DEALER_ID) as I_REG_DEALER_COUNT from b_dealers WHERE D_CREATED_AT>=? AND D_CREATED_AT<=? %s`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1316432
+    35  .  .  .  .  .  .  .  Name: "dealerWhere"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316192
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316205
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    49  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    52  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    53  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    54  .  .  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+    57  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316218
+    58  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    59  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    60  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    61  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    64  .  .  .  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+    67  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316221
+    68  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    69  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    70  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    71  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    72  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    73  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    74  .  .  .  .  .  .  .  .  .  .  .  }
+    75  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+    77  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316233
+    78  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    79  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    81  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    84  .  .  .  .  .  .  .  .  .  .  .  }
+    85  .  .  .  .  .  .  .  .  .  .  }
+    86  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+    87  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316236
+    88  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    89  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    91  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    92  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    93  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    94  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    98  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    99  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   100  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316240
+   101  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   102  .  .  .  .  .  .  .  .  .  .  .  }
+   103  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1316277
+   104  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316278
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315860
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 108)
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315870
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   128  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1316287
+   129  .  .  .  .  .  .  .  .  .  .  }
+   130  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  Data: 3
+   133  .  .  .  .  .  .  .  }
+   134  .  .  .  .  .  .  }
+   135  .  .  .  .  .  }
+   136  .  .  .  .  .  Ellipsis: 0
+   137  .  .  .  .  .  Rparen: 1316443
+   138  .  .  .  .  }
+   139  .  .  .  }
+   140  .  .  }
+   141  .  .  Data: 0
+   142  .  }
+   143  }
+/Users/gao/Code/stat/model/mstdealercount.go:33:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1316851
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1316297
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1316305
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1316309
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1316316
+    27  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1316317
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tselect count(CH_DEALER_ID) as I_REG_DEALER_COUNT from b_dealers WHERE D_CREATED_AT>=? AND D_CREATED_AT<=? %s`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1316432
+    35  .  .  .  .  .  .  .  Name: "dealerWhere"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316192
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316205
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    49  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    52  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    53  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    54  .  .  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+    57  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316218
+    58  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    59  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    60  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    61  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    64  .  .  .  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+    67  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316221
+    68  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    69  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    70  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    71  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    72  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    73  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    74  .  .  .  .  .  .  .  .  .  .  .  }
+    75  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+    77  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316233
+    78  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    79  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    81  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    84  .  .  .  .  .  .  .  .  .  .  .  }
+    85  .  .  .  .  .  .  .  .  .  .  }
+    86  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+    87  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316236
+    88  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    89  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    91  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    92  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    93  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    94  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    98  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    99  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   100  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316240
+   101  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   102  .  .  .  .  .  .  .  .  .  .  .  }
+   103  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1316277
+   104  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316278
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315860
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 108)
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315870
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   128  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1316287
+   129  .  .  .  .  .  .  .  .  .  .  }
+   130  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  Data: 3
+   133  .  .  .  .  .  .  .  }
+   134  .  .  .  .  .  .  }
+   135  .  .  .  .  .  }
+   136  .  .  .  .  .  Ellipsis: 0
+   137  .  .  .  .  .  Rparen: 1316443
+   138  .  .  .  .  }
+   139  .  .  .  }
+   140  .  .  }
+   141  .  .  Data: 0
+   142  .  }
+   143  }
+/Users/gao/Code/stat/model/mstdealercount.go:41:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1317152
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1316297
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1316305
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1316309
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1316316
+    27  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1316317
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tselect count(CH_DEALER_ID) as I_REG_DEALER_COUNT from b_dealers WHERE D_CREATED_AT>=? AND D_CREATED_AT<=? %s`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1316432
+    35  .  .  .  .  .  .  .  Name: "dealerWhere"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316192
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316205
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    49  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    52  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    53  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    54  .  .  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+    57  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316218
+    58  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    59  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    60  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    61  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    64  .  .  .  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+    67  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316221
+    68  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    69  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    70  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    71  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    72  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    73  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    74  .  .  .  .  .  .  .  .  .  .  .  }
+    75  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+    77  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316233
+    78  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    79  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    81  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    84  .  .  .  .  .  .  .  .  .  .  .  }
+    85  .  .  .  .  .  .  .  .  .  .  }
+    86  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+    87  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316236
+    88  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    89  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    91  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    92  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    93  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    94  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    98  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    99  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   100  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316240
+   101  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   102  .  .  .  .  .  .  .  .  .  .  .  }
+   103  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1316277
+   104  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316278
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315860
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 108)
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315870
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   128  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1316287
+   129  .  .  .  .  .  .  .  .  .  .  }
+   130  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  Data: 3
+   133  .  .  .  .  .  .  .  }
+   134  .  .  .  .  .  .  }
+   135  .  .  .  .  .  }
+   136  .  .  .  .  .  Ellipsis: 0
+   137  .  .  .  .  .  Rparen: 1316443
+   138  .  .  .  .  }
+   139  .  .  .  }
+   140  .  .  }
+   141  .  .  Data: 0
+   142  .  }
+   143  }
+/Users/gao/Code/stat/model/mstdealercount.go:49:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1318234
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1316297
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1316305
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1316309
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1316316
+    27  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1316317
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tselect count(CH_DEALER_ID) as I_REG_DEALER_COUNT from b_dealers WHERE D_CREATED_AT>=? AND D_CREATED_AT<=? %s`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1316432
+    35  .  .  .  .  .  .  .  Name: "dealerWhere"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316192
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316205
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    49  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    52  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    53  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    54  .  .  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+    57  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316218
+    58  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    59  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    60  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    61  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    64  .  .  .  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+    67  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316221
+    68  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    69  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    70  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    71  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    72  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    73  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    74  .  .  .  .  .  .  .  .  .  .  .  }
+    75  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+    77  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316233
+    78  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    79  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    81  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    84  .  .  .  .  .  .  .  .  .  .  .  }
+    85  .  .  .  .  .  .  .  .  .  .  }
+    86  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+    87  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316236
+    88  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    89  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    91  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    92  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    93  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+    94  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    98  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    99  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   100  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316240
+   101  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   102  .  .  .  .  .  .  .  .  .  .  .  }
+   103  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1316277
+   104  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1316278
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315860
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunOnly"
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 108)
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315870
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   128  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1316287
+   129  .  .  .  .  .  .  .  .  .  .  }
+   130  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  Data: 3
+   133  .  .  .  .  .  .  .  }
+   134  .  .  .  .  .  .  }
+   135  .  .  .  .  .  }
+   136  .  .  .  .  .  Ellipsis: 0
+   137  .  .  .  .  .  Rparen: 1316443
+   138  .  .  .  .  }
+   139  .  .  .  }
+   140  .  .  }
+   141  .  .  Data: 0
+   142  .  }
+   143  }
+/Users/gao/Code/stat/model/mstdealercount.go:68:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1318676
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1318435
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.Ident {
+    17  .  .  .  .  .  .  NamePos: 1318443
+    18  .  .  .  .  .  .  Name: "namedSelectSQL"
+    19  .  .  .  .  .  }
+    20  .  .  .  .  .  Lparen: 1318457
+    21  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    22  .  .  .  .  .  .  0: *ast.Ident {
+    23  .  .  .  .  .  .  .  NamePos: 1318458
+    24  .  .  .  .  .  .  .  Name: "tableStDealerCount"
+    25  .  .  .  .  .  .  .  Obj: *ast.Object {
+    26  .  .  .  .  .  .  .  .  Kind: const
+    27  .  .  .  .  .  .  .  .  Name: "tableStDealerCount"
+    28  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    29  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    30  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    31  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315752
+    32  .  .  .  .  .  .  .  .  .  .  .  Name: "tableStDealerCount"
+    33  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 25)
+    34  .  .  .  .  .  .  .  .  .  .  }
+    35  .  .  .  .  .  .  .  .  .  }
+    36  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    37  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+    38  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315773
+    39  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+    40  .  .  .  .  .  .  .  .  .  .  .  Value: "\"st_dealer_count\""
+    41  .  .  .  .  .  .  .  .  .  .  }
+    42  .  .  .  .  .  .  .  .  .  }
+    43  .  .  .  .  .  .  .  .  }
+    44  .  .  .  .  .  .  .  .  Data: 0
+    45  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  }
+    47  .  .  .  .  .  .  1: *ast.CompositeLit {
+    48  .  .  .  .  .  .  .  Type: *ast.Ident {
+    49  .  .  .  .  .  .  .  .  NamePos: 1318478
+    50  .  .  .  .  .  .  .  .  Name: "StDealerCount"
+    51  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    52  .  .  .  .  .  .  .  .  .  Kind: type
+    53  .  .  .  .  .  .  .  .  .  Name: "StDealerCount"
+    54  .  .  .  .  .  .  .  .  .  Decl: *ast.TypeSpec {
+    55  .  .  .  .  .  .  .  .  .  .  Name: *ast.Ident {
+    56  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315228
+    57  .  .  .  .  .  .  .  .  .  .  .  Name: "StDealerCount"
+    58  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 51)
+    59  .  .  .  .  .  .  .  .  .  .  }
+    60  .  .  .  .  .  .  .  .  .  .  Assign: 0
+    61  .  .  .  .  .  .  .  .  .  .  Type: *ast.StructType {
+    62  .  .  .  .  .  .  .  .  .  .  .  Struct: 1315242
+    63  .  .  .  .  .  .  .  .  .  .  .  Fields: *ast.FieldList {
+    64  .  .  .  .  .  .  .  .  .  .  .  .  Opening: 1315249
+    65  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 8) {
+    66  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+    67  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    68  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    69  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315252
+    70  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_MONTH"
+    71  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    72  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    73  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_MONTH"
+    74  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 66)
+    75  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    77  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    78  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+    79  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315279
+    80  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "string"
+    81  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    82  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+    83  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315286
+    84  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+    85  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"CH_MONTH\"`"
+    86  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    87  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    88  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Field {
+    89  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    91  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315303
+    92  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_REG_DEALER_COUNT"
+    93  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    94  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    95  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_REG_DEALER_COUNT"
+    96  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 88)
+    97  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    98  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    99  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   100  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   101  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315330
+   102  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   103  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   104  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315337
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_REG_DEALER_COUNT\"`"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  2: *ast.Field {
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315364
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_REG_CUSTOMER_COUNT"
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_REG_CUSTOMER_COUNT"
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 110)
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315391
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   125  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   127  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315398
+   128  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   129  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_REG_CUSTOMER_COUNT\"`"
+   130  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  .  .  .  .  .  3: *ast.Field {
+   133  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   134  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   135  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315427
+   136  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_TOTAL_REG_DEALER_COUNT"
+   137  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   138  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   139  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_TOTAL_REG_DEALER_COUNT"
+   140  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 132)
+   141  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   142  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   143  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   144  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   145  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315454
+   146  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   147  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   148  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   149  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315461
+   150  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   151  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_TOTAL_REG_DEALER_COUNT\"`"
+   152  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   153  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   154  .  .  .  .  .  .  .  .  .  .  .  .  .  4: *ast.Field {
+   155  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   156  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   157  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315494
+   158  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_TOTAL_REG_CUSTOMER_COUNT"
+   159  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   160  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   161  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_TOTAL_REG_CUSTOMER_COUNT"
+   162  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 154)
+   163  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   164  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   165  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   166  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   167  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315521
+   168  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   169  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   170  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   171  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315528
+   172  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   173  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_TOTAL_REG_CUSTOMER_COUNT\"`"
+   174  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   175  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   176  .  .  .  .  .  .  .  .  .  .  .  .  .  5: *ast.Field {
+   177  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   178  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   179  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315563
+   180  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_PAID_DEALER_COUNT"
+   181  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   182  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   183  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_PAID_DEALER_COUNT"
+   184  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 176)
+   185  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   186  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   187  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   188  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   189  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315590
+   190  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   191  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   192  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   193  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315597
+   194  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   195  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_PAID_DEALER_COUNT\"`"
+   196  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   197  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   198  .  .  .  .  .  .  .  .  .  .  .  .  .  6: *ast.Field {
+   199  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   200  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   201  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315625
+   202  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_PAID_CUSTOMER_COUNT"
+   203  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   204  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   205  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_PAID_CUSTOMER_COUNT"
+   206  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 198)
+   207  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   208  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   209  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   210  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   211  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315652
+   212  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   213  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   214  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   215  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315659
+   216  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   217  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_PAID_CUSTOMER_COUNT\"`"
+   218  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   219  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   220  .  .  .  .  .  .  .  .  .  .  .  .  .  7: *ast.Field {
+   221  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   222  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   223  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315689
+   224  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_YIYUN_ONLY"
+   225  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   226  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   227  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_YIYUN_ONLY"
+   228  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 220)
+   229  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   230  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   231  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   232  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   233  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1315716
+   234  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   235  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   236  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   237  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1315723
+   238  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   239  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_YIYUN_ONLY\"`"
+   240  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   241  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   242  .  .  .  .  .  .  .  .  .  .  .  .  }
+   243  .  .  .  .  .  .  .  .  .  .  .  .  Closing: 1315743
+   244  .  .  .  .  .  .  .  .  .  .  .  }
+   245  .  .  .  .  .  .  .  .  .  .  .  Incomplete: false
+   246  .  .  .  .  .  .  .  .  .  .  }
+   247  .  .  .  .  .  .  .  .  .  }
+   248  .  .  .  .  .  .  .  .  }
+   249  .  .  .  .  .  .  .  }
+   250  .  .  .  .  .  .  .  Lbrace: 1318491
+   251  .  .  .  .  .  .  .  Rbrace: 1318492
+   252  .  .  .  .  .  .  .  Incomplete: false
+   253  .  .  .  .  .  .  }
+   254  .  .  .  .  .  }
+   255  .  .  .  .  .  Ellipsis: 0
+   256  .  .  .  .  .  Rparen: 1318493
+   257  .  .  .  .  }
+   258  .  .  .  }
+   259  .  .  }
+   260  .  .  Data: 0
+   261  .  }
+   262  }
+/Users/gao/Code/stat/model/mstdealercount.go:86:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1322183
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1321003
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1321011
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1321015
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1321022
+    27  .  .  .  .  .  Args: []ast.Expr (len = 10) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1321023
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tSELECT CH_DEALER_ID, min(m) as CH_MONTH FROM (\n\t\t\tSELECT CH_DEALER_ID, DATE_FORMAT(CASE WHEN min(D_FINISHED_TIME) < '2017-01-01 00:00:00' THEN '2017-01-01 00:00:00' ELSE min(D_FINISHED_TIME) END, \"%%Y%%m\") as m from b_broker_bills_realtime WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 %s %s %s\n\t\t\tGROUP BY CH_DEALER_ID\n\t\t\tunion\n\t\t\tSELECT CH_DEALER_ID, DATE_FORMAT(CASE WHEN min(D_FINISHED_TIME) < '2017-01-01 00:00:00' THEN '2017-01-01 00:00:00' ELSE min(D_FINISHED_TIME) END, \"%%Y%%m\") as m from b_broker_bills_alipay   WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 %s %s %s\n\t\t\tGROUP BY CH_DEALER_ID\n\t\t\tunion\n\t\t\tSELECT CH_DEALER_ID, DATE_FORMAT(CASE WHEN min(D_FINISHED_TIME) < '2017-01-01 00:00:00' THEN '2017-01-01 00:00:00' ELSE min(D_FINISHED_TIME) END, \"%%Y%%m\") as m from b_broker_bills_wxpay    WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 %s %s %s\n\t\t\tGROUP BY CH_DEALER_ID \n\t\t) a GROUP BY CH_DEALER_ID HAVING min(m)=?\n\t\t`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1321978
+    35  .  .  .  .  .  .  .  Name: "dealerWhere"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320896
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    47  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320909
+    48  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    49  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    50  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    51  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+    52  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    53  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    54  .  .  .  .  .  .  .  .  .  .  .  }
+    55  .  .  .  .  .  .  .  .  .  .  }
+    56  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+    57  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320922
+    58  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    59  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    60  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    61  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    62  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    63  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    64  .  .  .  .  .  .  .  .  .  .  .  }
+    65  .  .  .  .  .  .  .  .  .  .  }
+    66  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+    67  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320925
+    68  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    69  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    70  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    71  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+    72  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    73  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    74  .  .  .  .  .  .  .  .  .  .  .  }
+    75  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+    77  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320937
+    78  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    79  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    81  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    84  .  .  .  .  .  .  .  .  .  .  .  }
+    85  .  .  .  .  .  .  .  .  .  .  }
+    86  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+    87  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320940
+    88  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    89  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    91  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    92  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 39)
+    93  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    94  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  }
+    96  .  .  .  .  .  .  .  .  .  }
+    97  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    98  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    99  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   100  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320944
+   101  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   102  .  .  .  .  .  .  .  .  .  .  .  }
+   103  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1320981
+   104  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320982
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320831
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 108)
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1320843
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   128  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1320993
+   129  .  .  .  .  .  .  .  .  .  .  }
+   130  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  Data: 0
+   133  .  .  .  .  .  .  .  }
+   134  .  .  .  .  .  .  }
+   135  .  .  .  .  .  .  2: *ast.Ident {
+   136  .  .  .  .  .  .  .  NamePos: 1321991
+   137  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   138  .  .  .  .  .  .  .  Obj: *(obj @ 69)
+   139  .  .  .  .  .  .  }
+   140  .  .  .  .  .  .  3: *ast.Ident {
+   141  .  .  .  .  .  .  .  NamePos: 1322003
+   142  .  .  .  .  .  .  .  Name: "brokerWhere"
+   143  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   144  .  .  .  .  .  .  }
+   145  .  .  .  .  .  .  4: *ast.Ident {
+   146  .  .  .  .  .  .  .  NamePos: 1322016
+   147  .  .  .  .  .  .  .  Name: "dealerWhere"
+   148  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+   149  .  .  .  .  .  .  }
+   150  .  .  .  .  .  .  5: *ast.Ident {
+   151  .  .  .  .  .  .  .  NamePos: 1322029
+   152  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   153  .  .  .  .  .  .  .  Obj: *(obj @ 69)
+   154  .  .  .  .  .  .  }
+   155  .  .  .  .  .  .  6: *ast.Ident {
+   156  .  .  .  .  .  .  .  NamePos: 1322041
+   157  .  .  .  .  .  .  .  Name: "brokerWhere"
+   158  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   159  .  .  .  .  .  .  }
+   160  .  .  .  .  .  .  7: *ast.Ident {
+   161  .  .  .  .  .  .  .  NamePos: 1322054
+   162  .  .  .  .  .  .  .  Name: "dealerWhere"
+   163  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+   164  .  .  .  .  .  .  }
+   165  .  .  .  .  .  .  8: *ast.Ident {
+   166  .  .  .  .  .  .  .  NamePos: 1322067
+   167  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   168  .  .  .  .  .  .  .  Obj: *(obj @ 69)
+   169  .  .  .  .  .  .  }
+   170  .  .  .  .  .  .  9: *ast.Ident {
+   171  .  .  .  .  .  .  .  NamePos: 1322079
+   172  .  .  .  .  .  .  .  Name: "brokerWhere"
+   173  .  .  .  .  .  .  .  Obj: *(obj @ 49)
+   174  .  .  .  .  .  .  }
+   175  .  .  .  .  .  }
+   176  .  .  .  .  .  Ellipsis: 0
+   177  .  .  .  .  .  Rparen: 1322090
+   178  .  .  .  .  }
+   179  .  .  .  }
+   180  .  .  }
+   181  .  .  Data: 0
+   182  .  }
+   183  }
+/Users/gao/Code/stat/model/mstdealercount.go:177:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1322997
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1322480
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Type: *ast.Ident {
+    15  .  .  .  .  NamePos: 1322507
+    16  .  .  .  .  Name: "string"
+    17  .  .  .  }
+    18  .  .  }
+    19  .  .  Data: 2
+    20  .  }
+    21  }
+/Users/gao/Code/stat/model/mstdealercount.go:199:14 
+     0  *ast.Ident {
+     1  .  NamePos: 1323895
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1323609
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Type: *ast.Ident {
+    15  .  .  .  .  NamePos: 1323620
+    16  .  .  .  .  Name: "string"
+    17  .  .  .  }
+    18  .  .  }
+    19  .  .  Data: 1
+    20  .  }
+    21  }
+/Users/gao/Code/stat/model/mstdealercount.go:239:14 
+     0  *ast.Ident {
+     1  .  NamePos: 1328302
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1326853
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    17  .  .  .  .  .  .  X: *ast.Ident {
+    18  .  .  .  .  .  .  .  NamePos: 1326861
+    19  .  .  .  .  .  .  .  Name: "fmt"
+    20  .  .  .  .  .  .  }
+    21  .  .  .  .  .  .  Sel: *ast.Ident {
+    22  .  .  .  .  .  .  .  NamePos: 1326865
+    23  .  .  .  .  .  .  .  Name: "Sprintf"
+    24  .  .  .  .  .  .  }
+    25  .  .  .  .  .  }
+    26  .  .  .  .  .  Lparen: 1326872
+    27  .  .  .  .  .  Args: []ast.Expr (len = 19) {
+    28  .  .  .  .  .  .  0: *ast.BasicLit {
+    29  .  .  .  .  .  .  .  ValuePos: 1326873
+    30  .  .  .  .  .  .  .  Kind: STRING
+    31  .  .  .  .  .  .  .  Value: "`\n\t\tselect count(p.DEALER_NAME) I_CUSTOMER_COUNT, CH_CUSTOMER_MONTH, '%s' CH_DATA_MONTH FROM (\n\t\t\tselect distinct(upper(trim(dn.CH_DEALER_NAME))) DEALER_NAME FROM (\n\t\t\t\tselect distinct(CH_DEALER_ID) CH_DEALER_ID from b_broker_bills_realtime  WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 AND D_FINISHED_TIME >= '%s' AND D_FINISHED_TIME <= '%s' %s %s\n\t\t\t\tunion\n\t\t\t\tselect distinct(CH_DEALER_ID) CH_DEALER_ID from b_broker_bills_alipay   WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 AND D_FINISHED_TIME >= '%s' AND D_FINISHED_TIME <= '%s' %s %s\n\t\t\t\tunion\n\t\t\t\tselect distinct(CH_DEALER_ID) CH_DEALER_ID from b_broker_bills_wxpay    WHERE I_STATUS IN (1,11) AND I_STATUS_DETAIL != 27 AND D_FINISHED_TIME >= '%s' AND D_FINISHED_TIME <= '%s' %s %s\n\t\t\t) as b\n\t\t\tjoin %s on b.CH_DEALER_ID=dn.CH_DEALER_ID) p\n\t\t\tjoin (select upper(trim(dn.CH_DEALER_NAME)) DEALER_NAME, min(CH_MONTH) CH_CUSTOMER_MONTH from\n\t\t\t\t  %s fp join %s on fp.CH_DEALER_ID=dn.CH_DEALER_ID WHERE CH_MONTH>='201701' AND CH_MONTH<='%s' AND I_YIYUN_ONLY = %d\n\t\t\t\t  GROUP BY 1) as ff on p.DEALER_NAME=ff.DEALER_NAME\n\t\t\tGROUP BY CH_CUSTOMER_MONTH`"
+    32  .  .  .  .  .  .  }
+    33  .  .  .  .  .  .  1: *ast.Ident {
+    34  .  .  .  .  .  .  .  NamePos: 1327992
+    35  .  .  .  .  .  .  .  Name: "yyyyMM"
+    36  .  .  .  .  .  .  .  Obj: *ast.Object {
+    37  .  .  .  .  .  .  .  .  Kind: var
+    38  .  .  .  .  .  .  .  .  Name: "yyyyMM"
+    39  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+    40  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    41  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    42  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326028
+    43  .  .  .  .  .  .  .  .  .  .  .  Name: "yyyyMM"
+    44  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+    45  .  .  .  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  .  .  .  }
+    47  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+    48  .  .  .  .  .  .  .  .  .  .  NamePos: 1326035
+    49  .  .  .  .  .  .  .  .  .  .  Name: "string"
+    50  .  .  .  .  .  .  .  .  .  }
+    51  .  .  .  .  .  .  .  .  }
+    52  .  .  .  .  .  .  .  }
+    53  .  .  .  .  .  .  }
+    54  .  .  .  .  .  .  2: *ast.Ident {
+    55  .  .  .  .  .  .  .  NamePos: 1328002
+    56  .  .  .  .  .  .  .  Name: "beginTime"
+    57  .  .  .  .  .  .  .  Obj: *ast.Object {
+    58  .  .  .  .  .  .  .  .  Kind: var
+    59  .  .  .  .  .  .  .  .  Name: "beginTime"
+    60  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    61  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    62  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    63  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326188
+    64  .  .  .  .  .  .  .  .  .  .  .  Name: "beginTime"
+    65  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 57)
+    66  .  .  .  .  .  .  .  .  .  .  }
+    67  .  .  .  .  .  .  .  .  .  }
+    68  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    69  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    70  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    71  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+    72  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326236
+    73  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "t"
+    74  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    75  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    76  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "t"
+    77  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    78  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 2) {
+    79  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    80  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326109
+    81  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "t"
+    82  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 74)
+    83  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    84  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+    85  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326112
+    86  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    87  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    88  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    89  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+    90  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 77)
+    91  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+    92  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    93  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    94  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    95  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    96  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+    97  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+    98  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+    99  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326157
+   100  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   101  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   102  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   103  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326162
+   104  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Parse"
+   105  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326167
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326168
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"200601\""
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326178
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "yyyyMM"
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326184
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   125  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Data: 0
+   126  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   127  .  .  .  .  .  .  .  .  .  .  .  .  }
+   128  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   129  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326238
+   130  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Format"
+   131  .  .  .  .  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  .  .  .  }
+   133  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326244
+   134  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   135  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   136  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326245
+   137  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   138  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"2006-01-02\""
+   139  .  .  .  .  .  .  .  .  .  .  .  .  }
+   140  .  .  .  .  .  .  .  .  .  .  .  }
+   141  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   142  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326257
+   143  .  .  .  .  .  .  .  .  .  .  }
+   144  .  .  .  .  .  .  .  .  .  }
+   145  .  .  .  .  .  .  .  .  }
+   146  .  .  .  .  .  .  .  .  Data: 1
+   147  .  .  .  .  .  .  .  }
+   148  .  .  .  .  .  .  }
+   149  .  .  .  .  .  .  3: *ast.Ident {
+   150  .  .  .  .  .  .  .  NamePos: 1328013
+   151  .  .  .  .  .  .  .  Name: "endTime"
+   152  .  .  .  .  .  .  .  Obj: *ast.Object {
+   153  .  .  .  .  .  .  .  .  Kind: var
+   154  .  .  .  .  .  .  .  .  Name: "endTime"
+   155  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+   156  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   157  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   158  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326261
+   159  .  .  .  .  .  .  .  .  .  .  .  Name: "endTime"
+   160  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 152)
+   161  .  .  .  .  .  .  .  .  .  .  }
+   162  .  .  .  .  .  .  .  .  .  }
+   163  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   164  .  .  .  .  .  .  .  .  .  .  0: *ast.BinaryExpr {
+   165  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   166  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   167  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   168  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   169  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.CallExpr {
+   170  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   171  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   172  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326309
+   173  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "t"
+   174  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 74)
+   175  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   176  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   177  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326311
+   178  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "AddDate"
+   179  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   180  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   181  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326318
+   182  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 3) {
+   183  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   184  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326319
+   185  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   186  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "0"
+   187  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   188  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.BasicLit {
+   189  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326322
+   190  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   191  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   192  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   193  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  2: *ast.BasicLit {
+   194  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326325
+   195  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   196  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "0"
+   197  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   198  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   199  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   200  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326326
+   201  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   202  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   203  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326328
+   204  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "AddDate"
+   205  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   206  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   207  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326335
+   208  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 3) {
+   209  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   210  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326336
+   211  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   212  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "0"
+   213  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   214  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.BasicLit {
+   215  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326339
+   216  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   217  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "0"
+   218  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   219  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  2: *ast.UnaryExpr {
+   220  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  OpPos: 1326342
+   221  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Op: -
+   222  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.BasicLit {
+   223  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326343
+   224  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: INT
+   225  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "1"
+   226  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   227  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   228  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   229  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   230  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326344
+   231  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   232  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   233  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326346
+   234  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Format"
+   235  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   236  .  .  .  .  .  .  .  .  .  .  .  .  }
+   237  .  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326352
+   238  .  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   239  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   240  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326353
+   241  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   242  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\"2006-01-02\""
+   243  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   244  .  .  .  .  .  .  .  .  .  .  .  .  }
+   245  .  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   246  .  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326365
+   247  .  .  .  .  .  .  .  .  .  .  .  }
+   248  .  .  .  .  .  .  .  .  .  .  .  OpPos: 1326367
+   249  .  .  .  .  .  .  .  .  .  .  .  Op: +
+   250  .  .  .  .  .  .  .  .  .  .  .  Y: *ast.BasicLit {
+   251  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326369
+   252  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   253  .  .  .  .  .  .  .  .  .  .  .  .  Value: "\" 23:59:59\""
+   254  .  .  .  .  .  .  .  .  .  .  .  }
+   255  .  .  .  .  .  .  .  .  .  .  }
+   256  .  .  .  .  .  .  .  .  .  }
+   257  .  .  .  .  .  .  .  .  }
+   258  .  .  .  .  .  .  .  .  Data: 2
+   259  .  .  .  .  .  .  .  }
+   260  .  .  .  .  .  .  }
+   261  .  .  .  .  .  .  4: *ast.Ident {
+   262  .  .  .  .  .  .  .  NamePos: 1328022
+   263  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   264  .  .  .  .  .  .  .  Obj: *ast.Object {
+   265  .  .  .  .  .  .  .  .  Kind: var
+   266  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   267  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+   268  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 6) {
+   269  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   270  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326383
+   271  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+   272  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   273  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   274  .  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+   275  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 267)
+   276  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+   277  .  .  .  .  .  .  .  .  .  .  .  }
+   278  .  .  .  .  .  .  .  .  .  .  }
+   279  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   280  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326396
+   281  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+   282  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   283  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   284  .  .  .  .  .  .  .  .  .  .  .  .  Name: "brokerWhere"
+   285  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 267)
+   286  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+   287  .  .  .  .  .  .  .  .  .  .  .  }
+   288  .  .  .  .  .  .  .  .  .  .  }
+   289  .  .  .  .  .  .  .  .  .  .  2: *ast.Ident {
+   290  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326409
+   291  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   292  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   293  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   294  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   295  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 267)
+   296  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+   297  .  .  .  .  .  .  .  .  .  .  .  }
+   298  .  .  .  .  .  .  .  .  .  .  }
+   299  .  .  .  .  .  .  .  .  .  .  3: *ast.Ident {
+   300  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326412
+   301  .  .  .  .  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   302  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 264)
+   303  .  .  .  .  .  .  .  .  .  .  }
+   304  .  .  .  .  .  .  .  .  .  .  4: *ast.Ident {
+   305  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326424
+   306  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   307  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   308  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   309  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   310  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 267)
+   311  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+   312  .  .  .  .  .  .  .  .  .  .  .  }
+   313  .  .  .  .  .  .  .  .  .  .  }
+   314  .  .  .  .  .  .  .  .  .  .  5: *ast.Ident {
+   315  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326427
+   316  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   317  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   318  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   319  .  .  .  .  .  .  .  .  .  .  .  .  Name: "_"
+   320  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 267)
+   321  .  .  .  .  .  .  .  .  .  .  .  .  Data: 3
+   322  .  .  .  .  .  .  .  .  .  .  .  }
+   323  .  .  .  .  .  .  .  .  .  .  }
+   324  .  .  .  .  .  .  .  .  .  }
+   325  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   326  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+   327  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.Ident {
+   328  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326431
+   329  .  .  .  .  .  .  .  .  .  .  .  .  Name: "GenerateFinanceDataAmountCoreSqlWhere"
+   330  .  .  .  .  .  .  .  .  .  .  .  }
+   331  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326468
+   332  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 1) {
+   333  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   334  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326469
+   335  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   336  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   337  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   338  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   339  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *ast.Field {
+   340  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   341  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   342  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326043
+   343  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "ifYiyunOnly"
+   344  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 336)
+   345  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   346  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   347  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   348  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326055
+   349  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "bool"
+   350  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   351  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   352  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   353  .  .  .  .  .  .  .  .  .  .  .  .  }
+   354  .  .  .  .  .  .  .  .  .  .  .  }
+   355  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   356  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326480
+   357  .  .  .  .  .  .  .  .  .  .  }
+   358  .  .  .  .  .  .  .  .  .  }
+   359  .  .  .  .  .  .  .  .  }
+   360  .  .  .  .  .  .  .  .  Data: 3
+   361  .  .  .  .  .  .  .  }
+   362  .  .  .  .  .  .  }
+   363  .  .  .  .  .  .  5: *ast.Ident {
+   364  .  .  .  .  .  .  .  NamePos: 1328034
+   365  .  .  .  .  .  .  .  Name: "brokerWhere"
+   366  .  .  .  .  .  .  .  Obj: *(obj @ 282)
+   367  .  .  .  .  .  .  }
+   368  .  .  .  .  .  .  6: *ast.Ident {
+   369  .  .  .  .  .  .  .  NamePos: 1328049
+   370  .  .  .  .  .  .  .  Name: "beginTime"
+   371  .  .  .  .  .  .  .  Obj: *(obj @ 57)
+   372  .  .  .  .  .  .  }
+   373  .  .  .  .  .  .  7: *ast.Ident {
+   374  .  .  .  .  .  .  .  NamePos: 1328060
+   375  .  .  .  .  .  .  .  Name: "endTime"
+   376  .  .  .  .  .  .  .  Obj: *(obj @ 152)
+   377  .  .  .  .  .  .  }
+   378  .  .  .  .  .  .  8: *ast.Ident {
+   379  .  .  .  .  .  .  .  NamePos: 1328069
+   380  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   381  .  .  .  .  .  .  .  Obj: *(obj @ 264)
+   382  .  .  .  .  .  .  }
+   383  .  .  .  .  .  .  9: *ast.Ident {
+   384  .  .  .  .  .  .  .  NamePos: 1328081
+   385  .  .  .  .  .  .  .  Name: "brokerWhere"
+   386  .  .  .  .  .  .  .  Obj: *(obj @ 282)
+   387  .  .  .  .  .  .  }
+   388  .  .  .  .  .  .  10: *ast.Ident {
+   389  .  .  .  .  .  .  .  NamePos: 1328096
+   390  .  .  .  .  .  .  .  Name: "beginTime"
+   391  .  .  .  .  .  .  .  Obj: *(obj @ 57)
+   392  .  .  .  .  .  .  }
+   393  .  .  .  .  .  .  11: *ast.Ident {
+   394  .  .  .  .  .  .  .  NamePos: 1328107
+   395  .  .  .  .  .  .  .  Name: "endTime"
+   396  .  .  .  .  .  .  .  Obj: *(obj @ 152)
+   397  .  .  .  .  .  .  }
+   398  .  .  .  .  .  .  12: *ast.Ident {
+   399  .  .  .  .  .  .  .  NamePos: 1328116
+   400  .  .  .  .  .  .  .  Name: "yiyunWhere"
+   401  .  .  .  .  .  .  .  Obj: *(obj @ 264)
+   402  .  .  .  .  .  .  }
+   403  .  .  .  .  .  .  13: *ast.Ident {
+   404  .  .  .  .  .  .  .  NamePos: 1328128
+   405  .  .  .  .  .  .  .  Name: "brokerWhere"
+   406  .  .  .  .  .  .  .  Obj: *(obj @ 282)
+   407  .  .  .  .  .  .  }
+   408  .  .  .  .  .  .  14: *ast.Ident {
+   409  .  .  .  .  .  .  .  NamePos: 1328143
+   410  .  .  .  .  .  .  .  Name: "dealerNameT"
+   411  .  .  .  .  .  .  .  Obj: *ast.Object {
+   412  .  .  .  .  .  .  .  .  Kind: var
+   413  .  .  .  .  .  .  .  .  Name: "dealerNameT"
+   414  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+   415  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   416  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   417  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326484
+   418  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerNameT"
+   419  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 411)
+   420  .  .  .  .  .  .  .  .  .  .  }
+   421  .  .  .  .  .  .  .  .  .  }
+   422  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   423  .  .  .  .  .  .  .  .  .  .  0: *ast.CallExpr {
+   424  .  .  .  .  .  .  .  .  .  .  .  Fun: *ast.SelectorExpr {
+   425  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   426  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326532
+   427  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "fmt"
+   428  .  .  .  .  .  .  .  .  .  .  .  .  }
+   429  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   430  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326536
+   431  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Sprintf"
+   432  .  .  .  .  .  .  .  .  .  .  .  .  }
+   433  .  .  .  .  .  .  .  .  .  .  .  }
+   434  .  .  .  .  .  .  .  .  .  .  .  Lparen: 1326543
+   435  .  .  .  .  .  .  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+   436  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   437  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1326544
+   438  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   439  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`(select CH_DEALER_NAME, CH_DEALER_ID FROM b_dealers WHERE CH_DEALER_ID<>\"\" %s) dn`"
+   440  .  .  .  .  .  .  .  .  .  .  .  .  }
+   441  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Ident {
+   442  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326629
+   443  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "dealerWhere"
+   444  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 272)
+   445  .  .  .  .  .  .  .  .  .  .  .  .  }
+   446  .  .  .  .  .  .  .  .  .  .  .  }
+   447  .  .  .  .  .  .  .  .  .  .  .  Ellipsis: 0
+   448  .  .  .  .  .  .  .  .  .  .  .  Rparen: 1326640
+   449  .  .  .  .  .  .  .  .  .  .  }
+   450  .  .  .  .  .  .  .  .  .  }
+   451  .  .  .  .  .  .  .  .  }
+   452  .  .  .  .  .  .  .  .  Data: 4
+   453  .  .  .  .  .  .  .  }
+   454  .  .  .  .  .  .  }
+   455  .  .  .  .  .  .  15: *ast.Ident {
+   456  .  .  .  .  .  .  .  NamePos: 1328158
+   457  .  .  .  .  .  .  .  Name: "tableDealerFirstPaid"
+   458  .  .  .  .  .  .  .  Obj: *ast.Object {
+   459  .  .  .  .  .  .  .  .  Kind: const
+   460  .  .  .  .  .  .  .  .  Name: "tableDealerFirstPaid"
+   461  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+   462  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   463  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   464  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1319687
+   465  .  .  .  .  .  .  .  .  .  .  .  Name: "tableDealerFirstPaid"
+   466  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 458)
+   467  .  .  .  .  .  .  .  .  .  .  }
+   468  .  .  .  .  .  .  .  .  .  }
+   469  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+   470  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+   471  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1319712
+   472  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   473  .  .  .  .  .  .  .  .  .  .  .  Value: "\"st_dealer_first_paid\""
+   474  .  .  .  .  .  .  .  .  .  .  }
+   475  .  .  .  .  .  .  .  .  .  }
+   476  .  .  .  .  .  .  .  .  }
+   477  .  .  .  .  .  .  .  .  Data: 0
+   478  .  .  .  .  .  .  .  }
+   479  .  .  .  .  .  .  }
+   480  .  .  .  .  .  .  16: *ast.Ident {
+   481  .  .  .  .  .  .  .  NamePos: 1328180
+   482  .  .  .  .  .  .  .  Name: "dealerNameT"
+   483  .  .  .  .  .  .  .  Obj: *(obj @ 411)
+   484  .  .  .  .  .  .  }
+   485  .  .  .  .  .  .  17: *ast.Ident {
+   486  .  .  .  .  .  .  .  NamePos: 1328193
+   487  .  .  .  .  .  .  .  Name: "yyyyMM"
+   488  .  .  .  .  .  .  .  Obj: *(obj @ 36)
+   489  .  .  .  .  .  .  }
+   490  .  .  .  .  .  .  18: *ast.Ident {
+   491  .  .  .  .  .  .  .  NamePos: 1328201
+   492  .  .  .  .  .  .  .  Name: "iYiyunOnly"
+   493  .  .  .  .  .  .  .  Obj: *ast.Object {
+   494  .  .  .  .  .  .  .  .  Kind: var
+   495  .  .  .  .  .  .  .  .  Name: "iYiyunOnly"
+   496  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+   497  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   498  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   499  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1326644
+   500  .  .  .  .  .  .  .  .  .  .  .  Name: "iYiyunOnly"
+   501  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 493)
+   502  .  .  .  .  .  .  .  .  .  .  }
+   503  .  .  .  .  .  .  .  .  .  }
+   504  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   505  .  .  .  .  .  .  .  .  .  .  NamePos: 1326690
+   506  .  .  .  .  .  .  .  .  .  .  Name: "int"
+   507  .  .  .  .  .  .  .  .  .  }
+   508  .  .  .  .  .  .  .  .  }
+   509  .  .  .  .  .  .  .  .  Data: 5
+   510  .  .  .  .  .  .  .  }
+   511  .  .  .  .  .  .  }
+   512  .  .  .  .  .  }
+   513  .  .  .  .  .  Ellipsis: 0
+   514  .  .  .  .  .  Rparen: 1328211
+   515  .  .  .  .  }
+   516  .  .  .  }
+   517  .  .  }
+   518  .  .  Data: 0
+   519  .  }
+   520  }
+/Users/gao/Code/stat/model/mstdealercount.go:360:8 
+     0  *ast.Ident {
+     1  .  NamePos: 1328779
+     2  .  Name: "query"
+     3  .  Obj: *ast.Object {
+     4  .  .  Kind: var
+     5  .  .  Name: "query"
+     6  .  .  Decl: *ast.ValueSpec {
+     7  .  .  .  Names: []*ast.Ident (len = 1) {
+     8  .  .  .  .  0: *ast.Ident {
+     9  .  .  .  .  .  NamePos: 1328490
+    10  .  .  .  .  .  Name: "query"
+    11  .  .  .  .  .  Obj: *(obj @ 3)
+    12  .  .  .  .  }
+    13  .  .  .  }
+    14  .  .  .  Values: []ast.Expr (len = 1) {
+    15  .  .  .  .  0: *ast.CallExpr {
+    16  .  .  .  .  .  Fun: *ast.Ident {
+    17  .  .  .  .  .  .  NamePos: 1328498
+    18  .  .  .  .  .  .  Name: "namedSelectSQL"
+    19  .  .  .  .  .  }
+    20  .  .  .  .  .  Lparen: 1328512
+    21  .  .  .  .  .  Args: []ast.Expr (len = 2) {
+    22  .  .  .  .  .  .  0: *ast.Ident {
+    23  .  .  .  .  .  .  .  NamePos: 1328513
+    24  .  .  .  .  .  .  .  Name: "tableStCustomerCohort"
+    25  .  .  .  .  .  .  .  Obj: *ast.Object {
+    26  .  .  .  .  .  .  .  .  Kind: const
+    27  .  .  .  .  .  .  .  .  Name: "tableStCustomerCohort"
+    28  .  .  .  .  .  .  .  .  Decl: *ast.ValueSpec {
+    29  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    30  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    31  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325442
+    32  .  .  .  .  .  .  .  .  .  .  .  Name: "tableStCustomerCohort"
+    33  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 25)
+    34  .  .  .  .  .  .  .  .  .  .  }
+    35  .  .  .  .  .  .  .  .  .  }
+    36  .  .  .  .  .  .  .  .  .  Values: []ast.Expr (len = 1) {
+    37  .  .  .  .  .  .  .  .  .  .  0: *ast.BasicLit {
+    38  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325466
+    39  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+    40  .  .  .  .  .  .  .  .  .  .  .  Value: "\"st_customer_cohort\""
+    41  .  .  .  .  .  .  .  .  .  .  }
+    42  .  .  .  .  .  .  .  .  .  }
+    43  .  .  .  .  .  .  .  .  }
+    44  .  .  .  .  .  .  .  .  Data: 0
+    45  .  .  .  .  .  .  .  }
+    46  .  .  .  .  .  .  }
+    47  .  .  .  .  .  .  1: *ast.CompositeLit {
+    48  .  .  .  .  .  .  .  Type: *ast.Ident {
+    49  .  .  .  .  .  .  .  .  NamePos: 1328536
+    50  .  .  .  .  .  .  .  .  Name: "StCustomerCohort"
+    51  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    52  .  .  .  .  .  .  .  .  .  Kind: type
+    53  .  .  .  .  .  .  .  .  .  Name: "StCustomerCohort"
+    54  .  .  .  .  .  .  .  .  .  Decl: *ast.TypeSpec {
+    55  .  .  .  .  .  .  .  .  .  .  Name: *ast.Ident {
+    56  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325111
+    57  .  .  .  .  .  .  .  .  .  .  .  Name: "StCustomerCohort"
+    58  .  .  .  .  .  .  .  .  .  .  .  Obj: *(obj @ 51)
+    59  .  .  .  .  .  .  .  .  .  .  }
+    60  .  .  .  .  .  .  .  .  .  .  Assign: 0
+    61  .  .  .  .  .  .  .  .  .  .  Type: *ast.StructType {
+    62  .  .  .  .  .  .  .  .  .  .  .  Struct: 1325128
+    63  .  .  .  .  .  .  .  .  .  .  .  Fields: *ast.FieldList {
+    64  .  .  .  .  .  .  .  .  .  .  .  .  Opening: 1325135
+    65  .  .  .  .  .  .  .  .  .  .  .  .  List: []*ast.Field (len = 6) {
+    66  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Field {
+    67  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    68  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    69  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325138
+    70  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_ID"
+    71  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    72  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    73  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_ID"
+    74  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 66)
+    75  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    76  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    77  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    78  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+    79  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325156
+    80  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int64"
+    81  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    82  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+    83  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325166
+    84  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+    85  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_ID\"`"
+    86  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    87  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    88  .  .  .  .  .  .  .  .  .  .  .  .  .  1: *ast.Field {
+    89  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+    90  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+    91  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325179
+    92  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_CUSTOMER_MONTH"
+    93  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+    94  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+    95  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_CUSTOMER_MONTH"
+    96  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 88)
+    97  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    98  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+    99  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   100  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   101  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325197
+   102  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "string"
+   103  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   104  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   105  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325207
+   106  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   107  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"CH_CUSTOMER_MONTH\"`"
+   108  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   109  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   110  .  .  .  .  .  .  .  .  .  .  .  .  .  2: *ast.Field {
+   111  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   112  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   113  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325233
+   114  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_DATA_MONTH"
+   115  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   116  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   117  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "CH_DATA_MONTH"
+   118  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 110)
+   119  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   120  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   121  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   122  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   123  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325251
+   124  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "string"
+   125  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   126  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   127  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325261
+   128  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   129  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"CH_DATA_MONTH\"`"
+   130  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   131  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   132  .  .  .  .  .  .  .  .  .  .  .  .  .  3: *ast.Field {
+   133  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   134  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   135  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325283
+   136  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_CUSTOMER_COUNT"
+   137  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   138  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   139  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_CUSTOMER_COUNT"
+   140  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 132)
+   141  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   142  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   143  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   144  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   145  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325301
+   146  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int32"
+   147  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   148  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   149  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325311
+   150  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   151  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_CUSTOMER_COUNT\"`"
+   152  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   153  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   154  .  .  .  .  .  .  .  .  .  .  .  .  .  4: *ast.Field {
+   155  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   156  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   157  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325336
+   158  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_YIYUN_ONLY"
+   159  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   160  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   161  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "I_YIYUN_ONLY"
+   162  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 154)
+   163  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   164  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   165  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   166  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.Ident {
+   167  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325354
+   168  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "int64"
+   169  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   170  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   171  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325364
+   172  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   173  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"I_YIYUN_ONLY\"`"
+   174  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   175  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   176  .  .  .  .  .  .  .  .  .  .  .  .  .  5: *ast.Field {
+   177  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Names: []*ast.Ident (len = 1) {
+   178  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  0: *ast.Ident {
+   179  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325385
+   180  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "D_CREATED_AT"
+   181  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Obj: *ast.Object {
+   182  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: var
+   183  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "D_CREATED_AT"
+   184  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Decl: *(obj @ 176)
+   185  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   186  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   187  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   188  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Type: *ast.SelectorExpr {
+   189  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  X: *ast.Ident {
+   190  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325403
+   191  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "time"
+   192  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   193  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Sel: *ast.Ident {
+   194  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  NamePos: 1325408
+   195  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Name: "Time"
+   196  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   197  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   198  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Tag: *ast.BasicLit {
+   199  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ValuePos: 1325413
+   200  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Kind: STRING
+   201  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  Value: "`db:\"D_CREATED_AT\"`"
+   202  .  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   203  .  .  .  .  .  .  .  .  .  .  .  .  .  }
+   204  .  .  .  .  .  .  .  .  .  .  .  .  }
+   205  .  .  .  .  .  .  .  .  .  .  .  .  Closing: 1325433
+   206  .  .  .  .  .  .  .  .  .  .  .  }
+   207  .  .  .  .  .  .  .  .  .  .  .  Incomplete: false
+   208  .  .  .  .  .  .  .  .  .  .  }
+   209  .  .  .  .  .  .  .  .  .  }
+   210  .  .  .  .  .  .  .  .  }
+   211  .  .  .  .  .  .  .  }
+   212  .  .  .  .  .  .  .  Lbrace: 1328552
+   213  .  .  .  .  .  .  .  Rbrace: 1328553
+   214  .  .  .  .  .  .  .  Incomplete: false
+   215  .  .  .  .  .  .  }
+   216  .  .  .  .  .  }
+   217  .  .  .  .  .  Ellipsis: 0
+   218  .  .  .  .  .  Rparen: 1328554
+   219  .  .  .  .  }
+   220  .  .  .  }
+   221  .  .  }
+   222  .  .  Data: 0
+   223  .  }
+   224  }
+/Users/gao/Code/stat/model/mstdealercount.go:376:8 

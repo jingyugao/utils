@@ -2,6 +2,7 @@ package testdata
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/jmoiron/sqlx"
 )
@@ -10,21 +11,33 @@ var (
 	db *sqlx.DB
 )
 
-func f2(name string) string {
-	sql1 := fmt.Sprintf("select id from tb where name = %s and 2 > 1", name)
-	db.Exec(sql1)
-	return "sql1"
+func f5(str string) string {
+	return str
 }
 
-// func f1() {
-// 	db := &sqlx.DB{}
-// 	name := "jake"
-// 	sql1 := fmt.Sprintf("select id from tb where name = %s and 2 > 1", name)
-// 	sql2 := "select id from tb where name = " + name + "and 2 > 1"
-// 	sql3 := "select id from tb where name = " + f2(name) + "and 2 > 1"
-// 	db.Exec(sql1)
-// 	db.Exec(sql2)
-// 	db.Exec(sql3)
-// 	sql4 := sql3
-// 	_ = sql4
-// }
+const (
+	strc = "qwer"
+)
+
+func f2(name string) string {
+	names := []string{}
+	str0 := "sql"
+	str1 := "q1" + "q2"
+	str2 := str0 + str1
+	str3 := fmt.Sprintf("%s %s", str2, str0)
+	str4 := f5(str3) + strc
+	str5 := str4 + strings.Join(names, ",")
+
+	// str5 := "xx" + fmt.Sprintf("%s %s", "sql"+"q1"+name, fmt.Sprintf(name)) + strings.Join(names, ",")
+
+	// sql1, xx := fmt.Sprintf("select id from tb where name = %s and 2 > 1", name), "qwe"
+	db.Exec(str5)
+	db.Exec(str4)
+	db.Exec(str3)
+	db.Exec(str2)
+	db.Exec(str1)
+	db.Exec(str0)
+	// _ = xx
+
+	return "xx"
+}
