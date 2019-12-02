@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go/ast"
 	"go/token"
+	"os"
 	"sort"
 
 	"golang.org/x/tools/go/packages"
@@ -14,7 +15,7 @@ func main() {
 	cfg.Fset = token.NewFileSet()
 	cfg.Mode = packages.LoadAllSyntax
 
-	pkgs, err := packages.Load(cfg, "code.yunzhanghu.com/be/stat/...")
+	pkgs, err := packages.Load(cfg, os.Args[1])
 	if err != nil {
 		panic(err)
 	}
