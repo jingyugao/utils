@@ -9,9 +9,12 @@ import (
 	"io/ioutil"
 	"os"
 	"sort"
+	"time"
 
 	"golang.org/x/tools/go/ast/astutil"
 	"golang.org/x/tools/go/packages"
+	"gopkg.in/src-d/go-git.v4"
+	"gopkg.in/src-d/go-git.v4/plumbing/object"
 )
 
 func main() {
@@ -24,6 +27,7 @@ func main() {
 		panic(err)
 	}
 	prog := &prog{
+
 		pkgs: pkgs,
 		decl: map[string]ast.Node{},
 		used: map[string]bool{},
@@ -35,6 +39,8 @@ func main() {
 }
 
 type prog struct {
+	repo *repo
+
 	pkgs []*packages.Package
 	decl map[string]ast.Node
 	used map[string]bool
@@ -70,7 +76,7 @@ func (prog *prog) run() {
 
 func (p *prog) pre(c *astutil.Cursor) bool {
 	n := c.Node()
-	if d, ok := n.(*ast.FuncDecl); ok {
+	if d, ok := n.(*ast.FuncDecl); ok && d.Recv == nil {
 		if !p.used[d.Name.Name] {
 			c.Delete()
 			return false
@@ -78,6 +84,52 @@ func (p *prog) pre(c *astutil.Cursor) bool {
 	}
 	return true
 }
+
+type repo struct {
+	r *git.Repository
+	c *object.Commit
+
+	cache map[string]*git.BlameResult
+}
+
+func (repo *repo) getInfo(file string, line int) (author string, date time.Time) {
+	b := repo.blame(file)
+	l := b.Lines[line]
+	return l.Author, l.Date
+}
+
+func (repo *repo) blame(file string) *git.BlameResult {
+	if _, ok := repo.cache[file]; !ok {
+		b, err := git.Blame(repo.c, file)
+		if err != nil {
+			panic(err)
+		}
+		repo.cache[file] = b
+	}
+
+	return repo.cache[file]
+}
+
+func (repo *repo) open(dir string) {
+	r, err := git.PlainOpen(dir)
+	if err != nil {
+		panic(err)
+	}
+	ref, err := r.Head()
+	if err != nil {
+		panic(err)
+	}
+	cmit, err := r.CommitObject(ref.Hash())
+	if err != nil {
+		panic(err)
+	}
+	repo.r = r
+	repo.c = cmit
+}
+func (r *repo) checkStale(fileName string, line string) {
+
+}
+
 func (prog *prog) doTrim(pkg *packages.Package) {
 	for _, f := range pkg.Syntax {
 		astutil.Apply(f, prog.pre, nil)
