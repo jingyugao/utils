@@ -1,12 +1,16 @@
 package main
 
 import (
+	"bytes"
 	"fmt"
 	"go/ast"
+	"go/format"
 	"go/token"
+	"io/ioutil"
 	"os"
 	"sort"
 
+	"golang.org/x/tools/go/ast/astutil"
 	"golang.org/x/tools/go/packages"
 )
 
@@ -19,20 +23,15 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
-	doProg(cfg.Fset, pkgs)
+	prog := &prog{
+		pkgs: pkgs,
+		decl: map[string]ast.Node{},
+		used: map[string]bool{},
+		fs:   cfg.Fset,
+	}
+	prog.run()
 	return
 
-}
-
-func name(n ast.Node) string {
-	switch n := n.(type) {
-	case *ast.Ident:
-		return n.Name
-	case *ast.SelectorExpr:
-		return name(n.X) + "." + n.Sel.Name
-	}
-	return ""
 }
 
 type prog struct {
@@ -47,15 +46,9 @@ type Package struct {
 	prog *prog
 }
 
-func doProg(fs *token.FileSet, pkgs []*packages.Package) {
-	prog := &prog{
-		pkgs: pkgs,
-		decl: map[string]ast.Node{},
-		used: map[string]bool{},
-		fs:   fs,
-	}
-	for _, pkg := range pkgs {
-		doPackage(fs, prog, pkg)
+func (prog *prog) run() {
+	for _, pkg := range prog.pkgs {
+		prog.doPackage(pkg)
 	}
 	// reports.
 	reports := Reports(nil)
@@ -64,16 +57,44 @@ func doProg(fs *token.FileSet, pkgs []*packages.Package) {
 			reports = append(reports, Report{node.Pos(), name})
 		}
 	}
+
 	sort.Sort(reports)
 	for _, report := range reports {
-		fmt.Printf("%s: %s is unused\n", fs.Position(report.pos), report.name)
+		fmt.Printf("%s: %s is unused\n", prog.fs.Position(report.pos), report.name)
+	}
+
+	for _, pkg := range prog.pkgs {
+		prog.doTrim(pkg)
 	}
 }
-func doPackage(fs *token.FileSet, prog *prog, pkg *packages.Package) {
-	p := &Package{
-		p:    pkg,
-		prog: prog,
+
+func (p *prog) pre(c *astutil.Cursor) bool {
+	n := c.Node()
+	if d, ok := n.(*ast.FuncDecl); ok {
+		if !p.used[d.Name.Name] {
+			c.Delete()
+			return false
+		}
 	}
+	return true
+}
+func (prog *prog) doTrim(pkg *packages.Package) {
+	for _, f := range pkg.Syntax {
+		astutil.Apply(f, prog.pre, nil)
+		var buf bytes.Buffer
+		err := format.Node(&buf, prog.fs, f)
+		if err != nil {
+			panic(err)
+		}
+		fName := prog.fs.Position(f.Pos()).Filename
+		err = ioutil.WriteFile(fName, buf.Bytes(), 0644)
+		if err != nil {
+			panic(err)
+		}
+	}
+}
+func (prog *prog) doPackage(pkg *packages.Package) {
+
 	for _, file := range pkg.Syntax {
 		for _, decl := range file.Decls {
 			switch n := decl.(type) {
@@ -95,14 +116,14 @@ func doPackage(fs *token.FileSet, prog *prog, pkg *packages.Package) {
 				// function declarations
 				// TODO(remy): do methods
 				if n.Recv == nil {
-					p.prog.decl[n.Name.Name] = n
+					prog.decl[n.Name.Name] = n
 				}
 			}
 		}
 	}
 	// init() and _ are always used
-	p.prog.used["init"] = true
-	p.prog.used["_"] = true
+	prog.used["init"] = true
+	prog.used["_"] = true
 	if pkg.Name != "main" {
 		// exported names are marked used for non-main packages.
 		// for name := range p.prog.decl {
@@ -112,13 +133,12 @@ func doPackage(fs *token.FileSet, prog *prog, pkg *packages.Package) {
 		// }
 	} else {
 		// in main programs, main() is called.
-		p.prog.used["main"] = true
+		prog.used["main"] = true
 	}
 	for _, file := range pkg.Syntax {
 		// walk file looking for used nodes.
-		ast.Walk(p, file)
+		ast.Walk(&Package{pkg, prog}, file)
 	}
-
 }
 
 type Report struct {
@@ -170,4 +190,17 @@ func (p *usedWalker) Visit(node ast.Node) ast.Visitor {
 		p.prog.used[n.Name] = true
 	}
 	return p
+}
+func F2() {
+
+}
+
+func name(n ast.Node) string {
+	switch n := n.(type) {
+	case *ast.Ident:
+		return n.Name
+	case *ast.SelectorExpr:
+		return name(n.X) + "." + n.Sel.Name
+	}
+	return ""
 }
